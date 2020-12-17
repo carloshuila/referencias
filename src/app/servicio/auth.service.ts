@@ -1,5 +1,8 @@
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from "@angular/fire/auth";
 import { Injectable } from '@angular/core';
+import { promise } from 'protractor';
+
+
 
 
 @Injectable({
@@ -9,10 +12,17 @@ export class AuthService {
 
   constructor(private fireAut : AngularFireAuth) { }
 
-  login(email:string, contrasena: string){
-    this.fireAut.signInWithEmailAndPassword(email, contrasena).then(res =>{
-      console.log(res);
-    }).catch(err => console.log('Error: '+ err));
+  login(email:string, contrasenia: string){
+
+    return new Promise((resolve, rejected)=>{
+      this.fireAut.signInWithEmailAndPassword(email, contrasenia).then(user =>{
+        resolve(user);
+        console.log('estas logeado');
+      }).catch(err => rejected(err));
+
+    })
+  
+
     
 
   }

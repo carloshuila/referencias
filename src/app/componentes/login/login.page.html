@@ -8,14 +8,14 @@
   <img class="icon" src="assets/img-login.jpg" alt="">
   <ion-item>
     <ion-label position="floating">Email</ion-label>
-    <ion-input type = "email" required></ion-input>
+    <ion-input type = "email" [(ngModel)]= "email" name= "email" required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type = "password" required></ion-input>
+    <ion-input type = "password" [(ngModel)]= "contrasenia" name="contrasenia" required></ion-input>
   </ion-item>
 
-  <ion-button (click)="validarLogin()" class="ion-padding" expand="full" color="primary">
+  <ion-button (click)=validarLogin() class="ion-padding" expand="full" color="primary">
     Entrar
   </ion-button>
   

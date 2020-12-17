@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../servicio/auth.service';
+import { AuthService } from "../../servicio/auth.service";
+
 
 @Component({
   selector: 'app-login',
@@ -8,13 +10,20 @@ import { AuthService } from '../../servicio/auth.service';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private authService: AuthService){ }
+  email: string;
+  contrasenia: string;
+
+  constructor(private authService: AuthService, public router: Router ){ }
 
   ngOnInit() {
   }
 
   validarLogin(){
     console.log(' esta en validar login');
+    this.authService.login(this.email, this.contrasenia).then(res =>{
+      this.router.navigate(['/home']);
+
+    }).catch (err => alert('Datos incorrectos o usuario no registrado'))
 
   }
 
