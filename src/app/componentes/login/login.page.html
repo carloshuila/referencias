@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center" >Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img class="icon" src="assets/img-login.jpg" alt="">
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type = "email" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type = "password" required></ion-input>
+  </ion-item>
+
+  <ion-button (click)="validarLogin()" class="ion-padding" expand="full" color="primary">
+    Entrar
+  </ion-button>
+  
+  <ion-button class="ion-padding" expand="full" color="light" [routerLink]="['/registro']">
+    Crear cuenta
+  </ion-button>
+
+</ion-content>
