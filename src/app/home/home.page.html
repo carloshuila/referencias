@@ -9,13 +9,12 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">BiblioApp</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <h2><strong>BiblioApp</strong></h2>
-    <h3>Opciones</h3>
+    <h2><strong>Opciones</strong></h2>
 
     <ion-grid>
       <ion-row>
@@ -26,8 +25,8 @@
             </ion-button>        
          </ion-col>
          <ion-col>
-          <ion-button>
-            Agregar Referencia
+          <ion-button (click)="ir_registrar()">
+            Registrar Referencia
             <ion-icon slot="end" name="add"></ion-icon>
           </ion-button> 
          </ion-col>
