@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'registro-user',
     loadChildren: () => import('./componentes/registro-user/registro-user.module').then( m => m.RegistroUserPageModule)
+  },
+  {
+    path: 'registro-referencia',
+    loadChildren: () => import('./componentes/registro-referencia/registro-referencia.module').then( m => m.RegistroReferenciaPageModule)
   },
 ];
 

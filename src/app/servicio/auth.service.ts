@@ -1,7 +1,8 @@
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Injectable } from '@angular/core';
 import { promise } from 'protractor';
-
+import { AngularFirestore } from '@angular/fire/firestore';
+import { from } from "rxjs";
 
 
 
@@ -10,7 +11,7 @@ import { promise } from 'protractor';
 })
 export class AuthService {
 
-  constructor(private fireAut : AngularFireAuth) { }
+  constructor(private fireAut : AngularFireAuth, private angularFirestore: AngularFirestore ) { }
 
   login(email:string, contrasenia: string){
 
@@ -32,6 +33,16 @@ export class AuthService {
       }).catch(err => rejected(err));
     })
   }
+
+  public insertar(coleccion, datos) {
+    return this.angularFirestore.collection(coleccion).add(datos);
+  } 
+
+ 
+
+
+
+
 
 
 }

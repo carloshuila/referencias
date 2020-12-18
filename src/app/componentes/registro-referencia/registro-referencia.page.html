@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center" >Referencia Bibliografica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img class="icon" src="assets/libro.png" alt="">
+
+  <ion-item>
+    <ion-label position="floating">Título Publicación</ion-label>
+    <ion-input type = "text" [(ngModel)]="referenciaEditando.titulopub" name= "titulopub" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Autores</ion-label>
+    <ion-input type = "text" [(ngModel)]= "referenciaEditando.autores" name="autores" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Tipo Publicación</ion-label>
+    <ion-input type = "text" [(ngModel)]= "referenciaEditando.tipopub" name="tipopub" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Nombre Evento o Revista</ion-label>
+    <ion-input type = "text" [(ngModel)]= "referenciaEditando.eventorevista" name="eventorevista" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Identificador único de documento</ion-label>
+    <ion-input type = "text" [(ngModel)]= "referenciaEditando.doi" name="doi" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Año de la publicación</ion-label>
+    <ion-input type = "text" [(ngModel)]= "referenciaEditando.anyopub" name="anyopub" required></ion-input>
+  </ion-item>
+
+
+
+  <ion-button  (click)=regitrarReferencia() class="ion-padding" expand="full" color="success">
+    Registrar
+  </ion-button>
+  <br>
+  
+  <u><p class="ion-text-center" routerLink = '/login' > Iniciar Sesión</p></u>
+
+</ion-content>

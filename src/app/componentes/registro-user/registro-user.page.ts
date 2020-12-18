@@ -25,7 +25,7 @@ export class RegistroUserPage implements OnInit {
 
     }).catch (err => console.log(err))
 
- }
+   }
 
 
 }
