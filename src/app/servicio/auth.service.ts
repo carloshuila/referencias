@@ -21,10 +21,19 @@ export class AuthService {
       }).catch(err => rejected(err));
 
     })
-  
-
-    
-
   }
+
+  
+  registroUser(email : string, contrasenia : string){
+    return new Promise((resolve, rejected)=>{
+      this.fireAut.createUserWithEmailAndPassword(email, contrasenia).then(res =>{
+        resolve(res);
+        console.log('estas registro usuario');
+      }).catch(err => rejected(err));
+    })
+  }
+
+
 }
+
 
