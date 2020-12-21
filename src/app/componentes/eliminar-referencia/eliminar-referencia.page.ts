@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Referencia } from './../../referencia';
 import { AuthService } from "../../servicio/auth.service";
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-eliminar-referencia',
@@ -16,7 +17,7 @@ export class EliminarReferenciaPage implements OnInit {
     data: {} as Referencia
    }];
 
-  constructor(private firestoreService: AuthService) { 
+  constructor(private firestoreService: AuthService , private alertController: AlertController) { 
     // Crear una referencia vacía
     this.referenciaEditando = {} as Referencia;
     this.obtenerListaReferencias();
@@ -36,7 +37,7 @@ export class EliminarReferenciaPage implements OnInit {
   
   }
 
-  clicBotonBorrar() {
+ /* clicBotonBorrar() {
     this.firestoreService.borrar("referencia", this.idReferenciaSelec).then(() => {
       // Actualizar la lista completa
       this.obtenerListaReferencias();
@@ -44,7 +45,7 @@ export class EliminarReferenciaPage implements OnInit {
       this.referenciaEditando = {} as Referencia;
       alert(' Referencia Eliminada correctamente!')
     })
-  }
+  }*/
 
   obtenerListaReferencias(){
     this.firestoreService.consultar("referencia").subscribe((resultadoConsultaReferencias) => {
@@ -57,5 +58,37 @@ export class EliminarReferenciaPage implements OnInit {
       })
     });
   }
+
+
+  async clicBotonBorrar(){
+
+    let alert = await  this.alertController.create({
+      message: '¿Estás seguro de que deseas eliminar esta referencia?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancelar',
+          handler: () => {
+            // Ha respondido que no así que no hacemos nada
+          }
+        },
+        {
+          text: 'Si',
+          handler: () => {
+               // AquÍ borramos el sitio en la base de datos
+               this.firestoreService.borrar("referencia", this.idReferenciaSelec).then(() => {
+                // Actualizar la lista completa
+                this.obtenerListaReferencias();
+                // Limpiar datos de pantalla
+                this.referenciaEditando = {} as Referencia;
+                
+              })
+
+           }
+        }
+      ]
+    });
+    await   alert.present();
+ }
 
 }
