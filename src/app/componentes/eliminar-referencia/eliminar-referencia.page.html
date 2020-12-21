@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slots="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" >Eliminar Referencia Bibliografica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p class="ion-text-center" >Seleccione la referencia a eliminar y luego presione el boton Borrar Referencia </p>
+  <ion-list>
+    <ion-list>
+      <ion-item *ngFor="let documentTarea of arrayColeccionReferencias" (click)="selecReferencia(documentTarea)">
+        
+        <ion-grid class="cell-1">
+          <ion-row>
+            <p>{{"Título Publicación: " +documentTarea.data.titulopub}}</p>
+          </ion-row>
+          <ion-row>
+            <p>{{ "Autores: "  + documentTarea.data.autores}}</p>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-button  (click)="clicBotonBorrar()" class="ion-padding" expand="full" color="success">
+      Borrar Referencia Seleccionada
+    </ion-button>
+
+  </ion-list>
+
+</ion-content>

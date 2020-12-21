@@ -9,39 +9,43 @@
 
 <ion-content padding>
   <img class="icon" src="assets/libro.png" alt="">
-
+    
   <ion-item>
     <ion-label position="floating">Título Publicación</ion-label>
-    <ion-input type = "text" [(ngModel)]="referenciaEditando.titulopub" name= "titulopub" required></ion-input>
+    <ion-input type = "text" [(ngModel)]="referenciaEditando.titulopub" name= "titulopub" ngModel  required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Autores</ion-label>
-    <ion-input type = "text" [(ngModel)]= "referenciaEditando.autores" name="autores" required></ion-input>
+    <ion-input type = "text" [(ngModel)]= "referenciaEditando.autores" name="autores" ngModel  required></ion-input>
   </ion-item>
+
   <ion-item>
     <ion-label position="floating">Tipo Publicación</ion-label>
-    <ion-input type = "text" [(ngModel)]= "referenciaEditando.tipopub" name="tipopub" required></ion-input>
+    <ion-select  type = "text" [(ngModel)]= "referenciaEditando.tipopub" name="tipopub" ngModel  required>
+      <ion-select-option value= "Articulo de Revista" >Articulo de revista</ion-select-option>
+      <ion-select-option value= "Articulo en Evento" >Articulo en evento (conferencia, seminario</ion-select-option>
+      <ion-select-option value= "Otro">Otro</ion-select-option>
+    </ion-select>
   </ion-item>
+
+
   <ion-item>
     <ion-label position="floating">Nombre Evento o Revista</ion-label>
-    <ion-input type = "text" [(ngModel)]= "referenciaEditando.eventorevista" name="eventorevista" required></ion-input>
+    <ion-input type = "text" [(ngModel)]= "referenciaEditando.eventorevista" name="eventorevista" ngModel  required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Identificador único de documento</ion-label>
-    <ion-input type = "text" [(ngModel)]= "referenciaEditando.doi" name="doi" required></ion-input>
+    <ion-input type = "text" [(ngModel)]= "referenciaEditando.doi" name="doi"ngModel  required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Año de la publicación</ion-label>
-    <ion-input type = "text" [(ngModel)]= "referenciaEditando.anyopub" name="anyopub" required></ion-input>
+    <ion-input type = "text" [(ngModel)]= "referenciaEditando.anyopub" name="anyopub" ngModel required></ion-input>
   </ion-item>
-
-
 
   <ion-button  (click)=regitrarReferencia() class="ion-padding" expand="full" color="success">
     Registrar
   </ion-button>
   <br>
-  
-  <u><p class="ion-text-center" routerLink = '/login' > Iniciar Sesión</p></u>
 
 </ion-content>
+

@@ -23,6 +23,18 @@ const routes: Routes = [
     path: 'registro-referencia',
     loadChildren: () => import('./componentes/registro-referencia/registro-referencia.module').then( m => m.RegistroReferenciaPageModule)
   },
+  {
+    path: 'listar-referencia',
+    loadChildren: () => import('./componentes/listar-referencia/listar-referencia.module').then( m => m.ListarReferenciaPageModule)
+  },
+  {
+    path: 'eliminar-referencia',
+    loadChildren: () => import('./componentes/eliminar-referencia/eliminar-referencia.module').then( m => m.EliminarReferenciaPageModule)
+  },
+  {
+    path: 'actualizar-referencia',
+    loadChildren: () => import('./componentes/actualizar-referencia/actualizar-referencia.module').then( m => m.ActualizarReferenciaPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center" >Referencias Bibliograficas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let documentTarea of arrayColeccionReferencias">
+      <ion-grid>
+        <ion-row>
+          <p>{{"Título Publicación: " +documentTarea.data.titulopub}}</p>
+        </ion-row>
+        <ion-row>
+          <p>{{ "Autores: "  + documentTarea.data.autores}}</p>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

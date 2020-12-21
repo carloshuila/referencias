@@ -1,18 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Referencia } from './../../referencia';
 import { AuthService } from "../../servicio/auth.service";
-
-
-
-
-
-
-
 @Component({
   selector: 'app-registro-referencia',
   templateUrl: './registro-referencia.page.html',
   styleUrls: ['./registro-referencia.page.scss'],
 })
+
 export class RegistroReferenciaPage implements OnInit {
 
   referenciaEditando: Referencia;  
@@ -24,7 +18,7 @@ export class RegistroReferenciaPage implements OnInit {
 
   ngOnInit() {
   }
-
+  
   regitrarReferencia(){
       this.firestoreService.insertar("referencia", this.referenciaEditando).then(() => {
         console.log('Referencia creada correctamente!');
@@ -34,11 +28,4 @@ export class RegistroReferenciaPage implements OnInit {
         console.error(error);
       });
     }
-
-  
-
-
-
-
-
 }
