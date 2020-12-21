@@ -12,8 +12,20 @@ export class HomePage {
 
   constructor(private router: Router) {}
 
+  ir_listar(){
+    this.router.navigateByUrl('/listar-referencia');
+  }
+
   ir_registrar(){
     this.router.navigateByUrl('/registro-referencia');
+  }
+
+  ir_modificar(){
+    this.router.navigateByUrl('/actualizar-referencia');
+  }
+
+  ir_eliminar(){
+    this.router.navigateByUrl('/eliminar-referencia');
   }
 
 }
