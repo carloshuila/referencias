@@ -49,15 +49,13 @@ export class ActualizarReferenciaPage implements OnInit {
     });
   }
 
-
-
   selecReferencia(referenciaSelec) {
     console.log("Referencia seleccionada: ");
     console.log(referenciaSelec);
     this.idReferenciaSelec = referenciaSelec.id;
     this.referenciaEditando.titulopub = referenciaSelec.data.titulopub;
     this.referenciaEditando.autores = referenciaSelec.data.autores;
-  
   }
+  
 
 }
